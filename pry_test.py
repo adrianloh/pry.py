@@ -1,5 +1,6 @@
 def test_skip(T):
 	T.skip()
+	print("test_skip, you should not see this line")
 
 def test_pass(T):
 	return
@@ -27,8 +28,7 @@ def test_exception_in_func(T):
 	b = a['a']
 
 def test_fatal(T):
-	T.log("This test is fatal")
-	T.fatal()
+	T.fatal("This test is fatal")
 
-def test_this_will_not_run(T):
+def test_this_will_not_run_because_of_previous_exception(T):
 	return
